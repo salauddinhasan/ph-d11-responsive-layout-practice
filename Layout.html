@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive Layout</title>
+    <style>
+     .container >* {
+        border: 3px solid blue;
+        background-color: blanchedalmond;
+        padding: 30px;
+   }
+ 
+   header {
+    grid-area: header;
+   }
+
+   nav {
+    grid-area: navbar;
+   }
+   main{
+    grid-area: main;
+   }
+   #sidebar {
+    grid-area: sidebar;
+   }
+   #advertise {
+    grid-area: advertise;
+   }
+   footer {
+    grid-area: footer;
+   }
+
+    .container {
+        display: grid;
+        padding: 30px;
+        gap: 20px;
+       grid-template-areas: 
+            'header        header    header  header'
+            'navbar        main    main       sidebar'
+            'navbar       main       main     advertise'
+            'footer     footer      footer     footer';
+        }
+        
+   @media screen and (max-width:576px) {
+        .container {
+            grid-template-areas:
+            'header'
+            'navbar'
+            'main'
+            'sidebar'
+            'advertise'
+            'footer';
+        }
+   }
+
+
+   @media screen and (min-width:576px) and (max-width: 992px) {
+        .container {
+            grid-template-areas: 
+            'header        header    header'
+            'navbar        navbar    navbar'
+            'sidebar       main       main'
+            'advertise     footer      footer';
+        }
+   }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>The Header</h1>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">nav-menu</a></li>
+                <li><a href="#">nav-menu</a></li>
+                <li><a href="#">nav-menu</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Main Article Area</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum magnam numquam quo nesciunt voluptates id illo, molestiae saepe iure consequuntur dicta ratione optio assumenda libero quis doloremque. Rerum eveniet id magnam voluptatem dolore et explicabo error nihil, architecto distinctio eum. Earum tenetur qui asperiores culpa eaque placeat dignissimos magnam architecto?</p>
+        </main>
+
+        <aside id="aidbar">
+            <p>Sidebar</p>
+        </aside>
+        <aside id="advertise">
+            <p>advertise</p>
+        </aside>
+        <footer>
+            <p>The Footer</p>
+        </footer>
+ 
+    </div>
+</body>
+</html>
